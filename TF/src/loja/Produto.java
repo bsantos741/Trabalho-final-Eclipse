@@ -10,25 +10,16 @@ import java.sql.Statement;
 
 
 public class Produto{
-    private int cod_Produto;
-    private String nomeProduto; 
-    private double preçoProduto;
-    private String categoria;
-    
-    private Connection conexao;
-    
+	private Connection conexao;
     public Produto(Connection conexao){
         this.conexao = conexao;
+
     }
     //Criar produto
-    public boolean create(String nome, int cod, double preço, String setor){
-        nomeProduto = nome;
-        cod_Produto = cod;
-        preçoProduto = preço;
-        categoria = setor;
+    public boolean adicionarNovoProduto(String nome, int cod, double preço, String setor, int quantidade){
         try{
             Statement statement = this.conexao.createStatement();
-            statement.executeUpdate("INSERT INTO Produto VALUES('"+nome+"', "+cod+", "+preço+", "+setor+")");
+            statement.executeUpdate("INSERT INTO Produto VALUES("+cod+", '"+nome+"', '"+setor+"', "+preço+", "+quantidade+")");
             
             System.out.println(nome+" - "+cod+ "adicionado(a)");
             return true;

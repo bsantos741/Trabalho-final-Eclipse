@@ -1,5 +1,10 @@
 package loja;
 
+import loja.Conexao;
+import loja.Produto;
+import java.sql.Statement;
+import java.sql.SQLException;
+
 /* Desenvolvedores: Bruno Moroni, Everardo Antonio, Jessica de Freitas e Luiz Fernando
  * Objetivo:  apresentar um projeto de código que atenda as necessidades de uma loja virtual 
  * de produtos diversos. O código se baseia nas demandas do dia-a-dia de um comércio que precisa
@@ -12,6 +17,24 @@ package loja;
 
 public class Teste {
 	public static void main(String args[])throws Exception{
+		
+		Conexao conexao = new Conexao();
+        conexao.abrirConexao();
+        Produto crud = new Produto(conexao.getConnection());
+        
+        crud.adicionarNovoProduto("Computador", 6, 1200, "informatica", 2);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 }

@@ -26,7 +26,7 @@ public class Conexao {
       try
       {
         // create a database connection
-        connection = DriverManager.getConnection("jdbc:sqlite:/home/bruno/Downloads/Atividades/Escola.db");
+        connection = DriverManager.getConnection("jdbc:sqlite:/home/bruno/Downloads/loja.db");
         this.setConnection(connection);        
         return true;
 
